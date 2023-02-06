@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <meta charset="utf-8">
+  <title>Mario Kart</title>
+    
+<style type="text/css">
+    body {
+        margin:20px;
+        background-image:url(img/bg.jpeg);
+        background-size:cover;
+        font-family:sans-serif;
+    }
+    
+    #form {
+        position:absolute;
+        top:30%;
+        left:36%;
+        padding:40px;
+        width:20%;
+        text-align:center;
+        background:#ffd642;
+        border: 3px solid #a6160c;
+        color:#a6160c;
+        font-size:30px;
+    }
+    
+    input[type=number] {
+        padding: 12px 20px;
+        margin: 8px 0;
+        border:none;
+    }
+    
+    input[type=submit] {
+        background-color:#a6160c;
+        border: none;
+        color:#fff;
+        padding:10px;
+        cursor: pointer;
+    }
+    
+    input[type=submit]:active {
+        color:#a6160c;
+        background:#fff;
+    }
+    
+    table, tr, td {
+        border-collapse: collapse;
+        font-size: 30px;
+        text-align:center;
+    }
+    
+    table {
+        margin:0 auto;
+        border:10px solid #a6160c;
+    }
+    
+    td {
+        width:80px;
+        background:#fac85c;
+        color:#fff;
+    }
+    
+    #icon {
+        position:relative;
+        width:70px;
+        cursor:pointer;
+    }
+    
+    .odd {
+        background:#fff;
+        color:#fac85c;
+    }
+    
+</style>
+    
+<script>
+    $(document).on('click', '.img1', function() {
+        $('.img1').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img2', function() {
+        $('.img2').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img3', function() {
+        $('.img3').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img4', function() {
+        $('.img4').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img5', function() {
+        $('.img5').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img6', function() {
+        $('.img6').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img7', function() {
+        $('.img7').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img8', function() {
+        $('.img8').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img9', function() {
+        $('.img9').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img10', function() {
+        $('.img10').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img11', function() {
+        $('.img11').animate({left: '+=83px'});
+    });
+    $(document).on('click', '.img12', function() {
+        $('.img12').animate({left: '+=83px'});
+    });
+</script>
+    
+</head>
+<body>
+
+    <div id="form">
+        Number of teams:<br>
+        <input type="number" id="table-row-num" value="3">
+        <input type="submit" id="enter" />
+    </div>
+    
+    <div id="table-gen">
+        <table border="1">
+        </table>
+    </div>
+    
+    <script>
+    $('#enter').on('click', generate);
+
+    function generate(e) {
+      var rows = $('#table-row-num').val();
+      var html = '';
+        
+      if (rows > 12) {
+          alert("Too many teams! Please enter a number ≤ 12.");
+      }
+       
+      else {
+      $("#form").hide();
+        
+      for (var i = 0; i < rows; i++) {
+        html += '<tr>' +
+          '<td><img id="icon" class="img' + (i + 1) + '" src="img/' + (i + 1) + '.png"></td>' +
+          '<td class="level odd">' + (i + 1) + '</td>' +
+          '<td class="level">' + (i + 1) + '</td>' +
+          '<td class="level odd">' + (i + 1) + '</td>' +
+          '<td class="level">' + (i + 1) + '</td>' +
+          '<td class="level odd">' + (i + 1) + '</td>' +
+          '<td class="level">' + (i + 1) + '</td>' +
+          '<td class="level odd">' + (i + 1) + '</td>' +
+          '<td class="level">' + (i + 1) + '</td>' +
+          '<td class="level odd">' + (i + 1) + '</td>' +
+          '</tr>';
+      }
+      $('table').html(html);
+    }
+        
+    }
+       
+</script>
+</body>
+</html>
