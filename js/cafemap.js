@@ -13,7 +13,7 @@ function setMap() {
     
     let waterlayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg?api_key=7f4c1858-2a5b-4147-9e3e-cff940a54945', {
         maxZoom: 20,
-        attribution: '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>', 
+        attribution: '<br><a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>', 
     }).addTo(map);
     
     waterlayer.setOpacity(0.4);
@@ -32,11 +32,12 @@ function plotCafe(map, cafe) {
     let marker = L.marker([cafe[6], cafe[7]], {icon: gabyou}).addTo(map);
     let description = `
         <h4>${cafe[0]}</h4>
-        <b>Chain?:</b> ${cafe[1]}<br>
-        <b>Pricing:</b> ${cafe[2]}<br>
-        <b>Rating:</b> ${cafe[3]}<br>
-        <b>Google Maps:</b> <a href="${cafe[4]}">${cafe[4]}</a><br>
-        <b>Lily's note:</b> ${cafe[5]}
+        <a href="${cafe[4]}">${cafe[4]}
+        <hr>
+        <b>Chain?:</b>\t${cafe[1]}<br>
+        <b>Pricing:</b>\t${cafe[2]}<br>
+        <b>Rating:</b>\t${cafe[3]}<br>
+        <b>Lily's note:</b>\t${cafe[5]}
     `;
     marker.bindPopup(description);
 }
