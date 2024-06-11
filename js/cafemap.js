@@ -21,40 +21,46 @@ function setMap() {
     return map;
 }
 
-function parseCSV(map, csv) {
-    let cafedata = 'Kissa Kotori,43.05786033,141.359919\nTokumitsu Coffee,43.06125089,141.3522102\nMusica Hall Cafe,43.05635511,141.3494906';
-
+function plotCafe(map, cafe) {
     let gabyou = L.icon({
         iconUrl: 'i/gabyou.png',
         iconSize:     [40, 60],
         iconAnchor:   [5, 60],
         popupAnchor: [20, -60]
     });
-
-    const result = [];
-    const lines = cafedata.split("\n");
   
-    for (let i = 0; i < lines.length; i++) {
-        let information = lines[i].split(",");
-        let marker = L.marker([information[1], information[2]], {icon: gabyou}).addTo(map);
-        marker.bindPopup(information[0]);
-    }
+    let marker = L.marker([cafe[6], cafe[7]], {icon: gabyou}).addTo(map);
+    let description = `
+        <h4>${cafe[0]}</h4>
+        <b>Chain?:</b> ${cafe[1]}<br>
+        <b>Pricing:</b> ${cafe[2]}<br>
+        <b>Rating:</b> ${cafe[3]}<br>
+        <b>Google Maps:</b> <a href="${cafe[4]}">${cafe[4]}</a><br>
+        <b>Lily's note:</b> ${cafe[5]}
+    `;
+    marker.bindPopup(description);
 }
 
-function howDoesThisWork() {
+function mapCafes(map) {
+    // could not have done this without
+    // https://www.js-tutorials.com/jquery-tutorials/reading-csv-file-using-jquery/
+    // still trying to wrap my head around this...
     let cafelist;
     $.ajax({
         type: "GET",  
         url: "https://lilywus.github.io/alting/data/cafes.csv",
         dataType: "text",       
-        success: function(response)  
-        {
-          cafelist = $.csv.toArrays(response);
-          console.log(cafelist);
+        success: function(response)  {
+            cafelist = $.csv.toArrays(response);
+          
+            for (let i = 1; i < cafelist.length; i++) {
+                let cafe = cafelist[i];
+                plotCafe(map, cafe);
+        }
         }   
       });
+
+    
 }
 
-parseCSV(setMap(), 'data/cafes.csv');
-
-howDoesThisWork();
+mapCafes(setMap());
