@@ -78,3 +78,7 @@ b {
     margin: 0 auto;
     font-size: 1.1em;
 }
+
+.leaflet-popup-content {
+    font-size: 1.2em;
+}

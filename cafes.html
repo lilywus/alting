@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sapporo Cafe Hop</title>
-    <link rel="stylesheet" type="text/css" href="style/style.css" />
-    <link rel="stylesheet" type="text/css" href="style/style_cafe.css" />
     <link rel="icon" href="i/cafe.svg" type="image/svg">
 
     <!--Leaflet files-->
@@ -17,15 +15,17 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin=""></script>
 
-
     <script src="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.umd.js"></script>
     <link href="https://cdn.maptiler.com/maptiler-sdk-js/v2.0.3/maptiler-sdk.css" rel="stylesheet" />
     <script src="https://cdn.maptiler.com/leaflet-maptilersdk/v2.0.0/leaflet-maptilersdk.js"></script>
 
+    <!--Jquery for parsing csv-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"></script>
 
     <script src="js/cafemap.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style/style_cafe.css" />
 </head>
 
 <body>
@@ -41,8 +41,12 @@
 
     <dialog id="dialog">
         <h3>Disclaimer</h3>
-        <p>Hello, and thank you for checking out this website!</p>
-        <p>A quick note that all ratings and comments on here are my own opinion.
+        <p>
+            Hello, and thank you for checking out this website! 
+            This is an assembly of cafes I've studied/knitted/spent many hours in over the course of three years in Sapporo.
+        </p>
+        <p>
+            A quick note that all ratings and comments on here are my own opinion.
             For public reviews and navigation, use the Google Maps link in each cafe entry.
         </p>
         <p>I hope you find a place (or two, or three..!) that might become your favorite Sapporo cafe c:</p>
