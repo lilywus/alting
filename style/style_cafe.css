@@ -1,10 +1,80 @@
-#content {
-    width:100vw;
-    height:100vh;
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1vh 3vw;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#header h2 {
+    font-size: 2em;
+    line-height: 1em;
+}
+
+button {
+    display: block;
+    border: 1px solid #000;
+    background-color: #FFF;
+    outline: 0;
+    padding: 5px;
+    font-size: 1em;
+    transition: all 0.2s ease 0s;
+}
+
+button:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
+button:active {
+    background-color: #FFF;
+    color: #000;
 }
 
 #map {
     margin: 15px auto;
     height: 80vh;
-    width: 90vw;
+    width: 94vw;
+    border-radius: 30px;
+}
+
+hr {
+    border-color:#144866;
+}
+
+b {
+    color: #144866;
+}
+
+::backdrop {
+    background: rgb(34,193,195);
+    background: linear-gradient(45deg, 
+        rgba(34,193,195,1) 0%, 
+        rgba(255,187,41,1) 100%);
+    opacity: 0.75;
+}
+
+#dialog {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    margin-top: 10vh;
+    padding: 40px;
+    width: 50vw;
+    font-size: 1.1em;
+}
+
+#dialog h3 {
+    font-size: 1.4em;
+}
+
+#dialog button {
+    margin: 0 auto;
+    font-size: 1.1em;
 }

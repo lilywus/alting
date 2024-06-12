@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sapporo Cafe Crawl</title>
+    <title>Sapporo Cafe Hop</title>
     <link rel="stylesheet" type="text/css" href="style/style.css" />
     <link rel="stylesheet" type="text/css" href="style/style_cafe.css" />
-    <link rel="icon" href="/alting/i/icon.png" type="image/png">
+    <link rel="icon" href="i/cafe.svg" type="image/svg">
 
     <!--Leaflet files-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -29,9 +29,25 @@
 </head>
 
 <body>
-    <center><h2>Cafvfeve</h2></center>
+    <div id="header">
+        <h2>
+            <img src="i/cafe.svg">
+            Sapporo Cafe Hop
+        </h2>
+        <button id="open">Disclaimer</button>
+    </div>
     
     <div id="map"></div>
 
+    <dialog id="dialog">
+        <h3>Disclaimer</h3>
+        <p>Hello, and thank you for checking out this website!</p>
+        <p>A quick note that all ratings and comments on here are my own opinion.
+            For public reviews and navigation, use the Google Maps link in each cafe entry.
+        </p>
+        <p>I hope you find a place (or two, or three..!) that might become your favorite Sapporo cafe c:</p>
+
+        <button id="close"><h4>Let me in!</h4></button>
+    </dialog>
 </body>
 </html>

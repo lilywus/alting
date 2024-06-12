@@ -18,28 +18,43 @@ function setMap() {
     
     waterlayer.setOpacity(0.4);
 
+    // scale icons on zoom
+    // changes the icon anchor, so not a huge fan of this
+    // map.on('zoomend', function() {
+    //     let newzoomw = '' + (2*(map.getZoom())) +'px';
+    //     let newzoomh = '' + (2*(map.getZoom())*52/37) +'px';
+    //     let markers = document.querySelectorAll(".markerpin");
+    //     markers.forEach(function (marker) {
+    //         marker.style.width = newzoomw;
+    //         marker.style.height = newzoomh;
+    //     });
+    // });
+
     return map;
 }
 
 function plotCafe(map, cafe) {
     let gabyou = L.icon({
         iconUrl: 'i/gabyou.png',
-        iconSize:     [40, 60],
-        iconAnchor:   [5, 60],
-        popupAnchor: [20, -60]
+        iconSize:     [40, 56.2],
+        iconAnchor:   [5, 56.2],
+        popupAnchor: [20, -56.2],
+        className: 'markerpin',
     });
   
     let marker = L.marker([cafe[6], cafe[7]], {icon: gabyou}).addTo(map);
     let description = `
-        <h4>${cafe[0]}</h4>
-        <a href="${cafe[4]}">${cafe[4]}
+        <h2>${cafe[0]}</h2>
+        <a href="${cafe[4]}">Google Maps link</a>
         <hr>
         <b>Chain?:</b>\t${cafe[1]}<br>
         <b>Pricing:</b>\t${cafe[2]}<br>
         <b>Rating:</b>\t${cafe[3]}<br>
         <b>Lily's note:</b>\t${cafe[5]}
     `;
-    marker.bindPopup(description);
+    marker.bindPopup(description, {
+        maxWidth: 250,
+    });
 }
 
 function mapCafes(map) {
@@ -64,4 +79,22 @@ function mapCafes(map) {
     
 }
 
+function toggleDisclaimer() {
+    let dialog = document.querySelector("#dialog");
+    dialog.showModal();
+
+    let closeButton = document.querySelector("#close");
+    closeButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        dialog.close();
+    });
+
+    let openButton = document.querySelector("#open");
+    openButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        dialog.showModal();
+    });
+}
+
+toggleDisclaimer();
 mapCafes(setMap());
