@@ -68,6 +68,7 @@ b {
     padding: 40px;
     width: 50vw;
     font-size: 1.1em;
+    max-height: 80vh;
 }
 
 #dialog h3 {
@@ -82,3 +83,10 @@ b {
 .leaflet-popup-content {
     font-size: 1.2em;
 }
+
+@media only screen and (max-width: 500px) {
+    #dialog {
+        font-size: 1em;
+        height: 60vh;
+    }
+  }
