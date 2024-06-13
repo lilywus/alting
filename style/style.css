@@ -1,6 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
+:root {
+    --main-color: rgb(135, 101, 209);
+}
+
 body {
 	font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif; 
 	margin-bottom: 5%;
@@ -24,7 +28,7 @@ hr {
     margin-bottom:7px;
     border-width:1px 0px 0px 0px;
     border-style:solid;
-    border-color:#32b4ff;
+    border-color: var(--main-color);
     height:1px;
 }
 
@@ -42,40 +46,74 @@ a:hover {
 }
 
 b {
-    color:#3fb9ff;
+    color: var(--main-color);
 }
 
-i {
-    color:#10e597;
-}
-
-h1, h2, h3, h4, h5 {
+h1, h2 {
     margin: 0;
     font-family: Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, serif; 
     font-weight: 700;
 }
 
+h3, h4, h5 {
+    font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    font-weight: normal;
+}
 
-#content {
+#pagebox {
     width:60%;
     height:70%;
     overflow:auto;
-    margin:5% auto;
-    padding:20px;
-    border:1px solid #32b4ff;
+    margin:2% auto;
+}
+
+#tabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+#tabs a {
+    width: 33%;
+}
+
+#tabs a:hover {
+    text-decoration: none;
+}
+
+.tab {
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #abb4b9;
+    border-bottom: none;
+}
+
+.current-tab, .tab:hover {
+    border-color: var(--main-color);
+    background-color: var(--main-color);
+    color: #FFF;
+}
+
+.tab:active {
+    background-color: #FFF;
+    color: var(--main-color);
+}
+
+#content {
+    padding: 20px;
+    border: 1px solid var(--main-color);
 }
 
 #links {
-    margin:0 auto;
+    margin: 0 auto;
 }
 
 #links a {
-    display:inline-block;
-    text-align:center;
+    display: inline-block;
+    text-align: center;
     /*width:80px;*/
-    margin:5px auto;
-    padding:7px;
-    border:1px solid #32b4ff;
+    margin: 5px auto;
+    padding: 7px;
+    border: 1px solid var(--main-color);
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
@@ -84,8 +122,8 @@ h1, h2, h3, h4, h5 {
 }
 
 #links a:link, a:visited, a:focus, a:active {
-    background:none;
-    color:#0ea2f7;
+    background: none;
+    color: var(--main-color);
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
@@ -94,8 +132,8 @@ h1, h2, h3, h4, h5 {
 }
 
 #links a:hover {
-    background:#32b4ff;
-    color:#fff;
+    background: var(--main-color);
+    color: #fff;
     text-decoration: none;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
