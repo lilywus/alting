@@ -8,6 +8,16 @@
     <link rel="stylesheet" type="text/css" href="style/style.css" />
     <link rel="icon" href="/alting/i/icon.png" type="image/png">
 
+    <!--Tabulator scripts-->
+    <link href="https://unpkg.com/tabulator-tables@6.2.1/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.2.1/dist/js/tabulator.min.js"></script>
+
+    <!--Jquery for parsing csv-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"></script>
+
+    <script src="js/lessontable.js" defer></script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6GJ1HC6C7"></script>
     <script>
@@ -35,7 +45,17 @@
             A collection of my lessons and activities! 
             I hope to build this out more in the future, but for now, it is what it is.
         </p>
+        <p>
+            <b>Status:</b> Activity name links to PDF files of each activity.<br>
+            <b>To do:</b>
+        </p>
+        <ul>
+            <li>Convert PDF files to Google Slides/Docs</li>
+            <li>Add more detailed activities, such as Jeopardy games</li>
+            <li>Add section (somewhere..) for links to activities that I haven't tried but look interesting</li>
+        </ul>
 
+        <div id="lessontable"></div>
         
     </div>
 </div>
