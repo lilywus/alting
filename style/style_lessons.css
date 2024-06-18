@@ -1,0 +1,23 @@
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+ul {
+    margin-top: 0;
+}
+
+.tabulator-col-resize-handle {
+    background: none;
+}
+
+.tabulator-row .tabulator-cell:last-of-type {
+    border-right: none;
+}
+
+.tabulator-row.tabulator-selectable:hover {
+    background-color: rgb(211, 200, 234);
+}
+
+.tabulator-row.tabulator-selectable:active {
+    background-color: rgb(189, 168, 231);
+}

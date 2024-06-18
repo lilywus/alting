@@ -72,12 +72,18 @@ b {
 }
 
 #dialog h3 {
+    margin-top: 0;
     font-size: 1.4em;
 }
 
 #dialog button {
     margin: 0 auto;
     font-size: 1.1em;
+    line-height: 1.1em;
+}
+
+#dialog button h4 {
+    margin: 7px 5px 5px 5px;
 }
 
 .leaflet-popup-content {

@@ -2,7 +2,7 @@
 /* CSS Document */
 
 :root {
-    --main-color: rgb(135, 101, 209);
+    --main-color: rgb(121, 90, 188);
 }
 
 body {
@@ -10,7 +10,6 @@ body {
 	margin-bottom: 5%;
 	padding: 0;
 	color: #000;
-	line-height:130%;
 }
 
 ::-webkit-scrollbar {
@@ -61,10 +60,10 @@ h3, h4, h5 {
 }
 
 #pagebox {
-    width:60%;
-    height:70%;
-    overflow:auto;
-    margin:2% auto;
+    width: 60%;
+    height: 70%;
+    overflow: auto;
+    margin: 2% auto;
 }
 
 #tabs {
@@ -140,4 +139,11 @@ h3, h4, h5 {
     -ms-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+}
+
+@media only screen and (max-width: 500px) {
+    #pagebox {
+        width: 85%;
+        margin: 5% auto;
+    }
 }
