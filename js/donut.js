@@ -1,39 +1,89 @@
-function drawTiers() {
+function drawTiers(donuts) {
     const donutTable = document.querySelector("#donuttable");
     const rankings = [
-        "Probably thinking about these 50% of the time",
+        "Always thinking about them",
         "Would order more than again",
         "Unproblematic (mostly)",
         "Sigh",
         "Why does this exist",
     ];
-    const colors = [];
+    const rankOrder = {
+        S: 1,
+        A: 2,
+        B: 3,
+        C: 4,
+        D: 5,
+    };
+    const colors = [
+        "rgb(229, 204, 255)",
+        "rgb(204, 229, 255)",
+        "rgb(204, 255, 204)",
+        "rgb(255, 255, 204)",
+        "rgb(255, 204, 204)",
+    ];
     
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i < 6; i++) {
         let row = document.createElement("div");
         row.classList.add("row");
 
         let rank = document.createElement("div");
         rank.classList.add("rank");
+        rank.style.backgroundColor = colors[i - 1];
         let rankText = document.createElement("p");
-        rankText.textContent = rankings[i];
+        rankText.textContent = rankings[i - 1];
         rank.appendChild(rankText);
         row.appendChild(rank);
 
-        let donuts = document.createElement("div");
-        donuts.classList.add("donuts");
+        let donutDiv = document.createElement("div");
+        donutDiv.classList.add("donuts");
 
-        for (let i = 0; i < 5; i++) {
-            let donut = document.createElement("div");
-            donut.classList.add("donut");
-            donut.textContent = "donut";
-            donuts.appendChild(donut);
+        for (let j = 1; j < donuts.length; j++) {
+            let donutInfo = donuts[j];
+            let donutRank = rankOrder[donutInfo[4]];
+
+            if (donutRank == i) {
+                let donut = document.createElement("div");
+                donut.classList.add("donut");
+                donut.style.backgroundImage = "url('i/donuts/" + donutInfo[5] + "')";
+
+                donutDiv.appendChild(donut);
+            }
         }
 
-        row.appendChild(donuts);
+        row.appendChild(donutDiv);
 
         donutTable.appendChild(row);
     }
 }
 
-drawTiers();
+function readDonuts() {
+    // could not have done this without
+    // https://www.js-tutorials.com/jquery-tutorials/reading-csv-file-using-jquery/
+    // still trying to wrap my head around this...
+    let donuts;
+    $.ajax({
+        type: "GET",  
+        url: "https://lilywus.github.io/alting/data/donuts.csv",
+        dataType: "text",       
+        success: function(response)  {
+            donuts = $.csv.toArrays(response);
+            drawTiers(donuts);
+        }   
+      });
+}
+
+function butWhy() {
+    let whyDialog = document.querySelector("#butwhy");
+    let why = document.querySelector("#explanation");
+    why.addEventListener("click", (e) => {
+        whyDialog.showModal();
+    });
+
+    let closeWhy = document.querySelector("#closewhy");
+    closeWhy.addEventListener("click", (e) => {
+        whyDialog.close();
+    });
+}
+
+butWhy();
+readDonuts();

@@ -75,8 +75,6 @@ function mapCafes(map) {
         }
         }   
       });
-
-    
 }
 
 function toggleDisclaimer() {

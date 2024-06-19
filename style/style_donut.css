@@ -1,14 +1,27 @@
+body {
+    margin-top: 3vh;
+}
+
+#header {
+    text-align: center;
+}
+
 #donuttable {
     margin: 10px auto;
     width: 70vw;
     display: flex;
     flex-direction: column;
-    border: 1px solid slateblue;
+    border: 1px solid rgb(90, 75, 186);
 }
 
 .row {
     display: flex;
-    height: 100px;
+    background: rgb(233, 230, 255);
+    border-bottom: 1px solid rgb(90, 75, 186);
+}
+
+.row:last-of-type {
+    border-bottom: none;
 }
 
 .rank {
@@ -17,6 +30,7 @@
     padding: 15px;
     align-items: center;
     text-align: center;
+    border-right: 1px solid rgb(90, 75, 186);
 }
 
 .rank p {
@@ -26,8 +40,90 @@
 
 .donuts {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .donut {
-    width: 50px;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+}
+
+.donut:hover {
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+::backdrop {
+    background: rgb(34,193,195);
+    background: linear-gradient(45deg, 
+        rgba(34,193,195,1) 0%, 
+        rgba(255,187,41,1) 100%);
+    opacity: 0.75;
+}
+
+dialog {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    margin-top: 10vh;
+    padding: 40px;
+    width: 50vw;
+    font-size: 1.1em;
+    max-height: 80vh;
+}
+
+dialog h3 {
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+dialog button {
+    margin: 0 auto;
+    font-size: 1.1em;
+    line-height: 1.1em;
+}
+
+dialog button h4 {
+    margin: 7px 5px 5px 5px;
+}
+
+button {
+    display: block;
+    border: 1px solid #000;
+    background-color: #FFF;
+    outline: 0;
+    padding: 5px;
+    font-size: 1em;
+    transition: all 0.2s ease 0s;
+}
+
+button:hover {
+    background-color: #000;
+    color: #FFF;
+}
+
+button:active {
+    background-color: #FFF;
+    color: #000;
+}
+
+.leaflet-popup-content {
+    font-size: 1.2em;
+}
+
+@media only screen and (max-width: 500px) {
+    #donuttable {
+        width: 90vw;
+    }
+
+    .rank {
+        font-size: .8em;
+        padding: 5px;
+    }
+
+    dialog {
+        font-size: 1em;
+        height: 60vh;
+    }
 }
