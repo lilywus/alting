@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Misdo Showdown</title>
+    <link rel="icon" href="i/cafe.svg" type="image/svg">
+
+    <!--Jquery for parsing csv-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"></script>
+
+    <!--My scripts-->
+    <script src="js/donut.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style/style_donut.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9Z323GNCJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G9Z323GNCJ');
+    </script>
+
+</head>
+
+<body>
+    <div id="header">
+        <h2>
+            <img src="i/cafe.svg">
+            Mister Donut Tier List
+        </h2>
+        <button id="open">Disclaimer</button>
+    </div>
+    
+    <div id="donuttable"></div>
+
+    <!-- <dialog id="dialog">
+        <h3>Disclaimer</h3>
+        <p>
+            Hello, and thank you for checking out this website! 
+            This is an assembly of cafes I've studied/knitted/spent many hours in over the course of three years in Sapporo.
+        </p>
+        <p>
+            A quick note that all ratings and comments on here are my own opinion.
+            For public reviews and navigation, use the Google Maps link in each cafe entry.
+        </p>
+        <p>Whether through this website or not, I hope you find a place (or two, or three..!) that might become your favorite Sapporo cafe c:</p>
+
+        <button id="close"><h4>Let me in!</h4></button>
+    </dialog> -->
+</body>
+</html>

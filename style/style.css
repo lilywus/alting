@@ -32,15 +32,12 @@ hr {
 }
 
 a:link {
-	color: #666;
+	color: var(--main-color);
 	text-decoration: none; 
 }
-a:visited {
-	color: #666;
-	text-decoration: none;
-}
+
 a:hover {
-	/*color: #CCC;*/
+	color: #666;
 	text-decoration: underline;
 }
 
