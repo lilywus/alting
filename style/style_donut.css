@@ -2,7 +2,7 @@ body {
     margin-top: 3vh;
 }
 
-#header {
+#header, #footer {
     text-align: center;
 }
 
@@ -15,7 +15,8 @@ body {
 }
 
 .row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
     background: rgb(233, 230, 255);
     border-bottom: 1px solid rgb(90, 75, 186);
 }
@@ -26,7 +27,7 @@ body {
 
 .rank {
     display: flex;
-    width: 100px;
+    width: 120px;
     padding: 15px;
     align-items: center;
     text-align: center;
@@ -112,7 +113,7 @@ button:active {
     font-size: 1.2em;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1122px) {
     #donuttable {
         width: 90vw;
     }
@@ -125,5 +126,16 @@ button:active {
     dialog {
         font-size: 1em;
         height: 60vh;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .rank {
+        width: 100px;
+    }
+
+    .donut {
+        width: 60px;
+        height: 60px;
     }
 }
