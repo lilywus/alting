@@ -107,7 +107,7 @@ function donutDialog(donuts) {
             donutInfo.appendChild(donutExtras);
 
             let donutRating = document.createElement("li");
-            donutRating.innerHTML = ("<b>Rating:</b> "+ rankOrder[donut[4]]);
+            donutRating.innerHTML = ("<b>Rating:</b> "+ rankings[rankOrder[donut[4]]]);
             donutInfo.appendChild(donutRating);
 
             let donutNotes = document.createElement("li");
