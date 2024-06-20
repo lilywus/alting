@@ -109,8 +109,19 @@ button:active {
     color: #000;
 }
 
-.leaflet-popup-content {
-    font-size: 1.2em;
+dialog ul {
+    list-style-type: none;
+}
+
+#donutdialog img {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+}
+
+.donutname {
+    text-align: center;
 }
 
 @media only screen and (max-width: 1122px) {

@@ -44,6 +44,7 @@ function drawTiers(donuts) {
             if (donutRank == i) {
                 let donut = document.createElement("div");
                 donut.classList.add("donut");
+                donut.setAttribute("id", j);
                 donut.style.backgroundImage = "url('i/donuts/" + donutInfo[5] + "')";
 
                 donutDiv.appendChild(donut);
@@ -53,6 +54,78 @@ function drawTiers(donuts) {
         row.appendChild(donutDiv);
 
         donutTable.appendChild(row);
+    }
+}
+
+function donutDialog(donuts) {
+    const rankings = [
+        "Always thinking about them",
+        "Would order more than again",
+        "Unproblematic (mostly)",
+        "Sigh",
+        "Why does this exist",
+    ];
+    const rankOrder = {
+        S: 1,
+        A: 2,
+        B: 3,
+        C: 4,
+        D: 5,
+    };
+
+    let donutPopup = document.querySelector("#donutdialog");
+
+    let donutDivs = document.querySelectorAll(".donut");
+    for (i = 0; i < donutDivs.length; i++) {
+        donutDivs[i].addEventListener("click", function (e) {
+            let donutId = this.getAttribute("id");
+            let donut = donuts[donutId];
+            donutPopup.innerHTML = "";
+
+            let donutImage = document.createElement("img");
+            let donutURL = "i/donuts/" + donut[5];
+            donutImage.setAttribute("src", donutURL);
+            donutPopup.appendChild(donutImage);
+
+            let donutInfo = document.createElement("ul");
+
+            let donutName = document.createElement("li");
+            donutName.classList.add("donutname");
+            donutName.innerHTML = ("<h2>" + donut[0] + "</h2>");
+            donutInfo.appendChild(donutName);
+
+            let donutBase = document.createElement("li");
+            donutBase.innerHTML = ("<b>Base:</b> "+ donut[1]);
+            donutInfo.appendChild(donutBase);
+
+            let donutFlavor = document.createElement("li");
+            donutFlavor.innerHTML = ("<b>Flavor:</b> "+ donut[2]);
+            donutInfo.appendChild(donutFlavor);
+
+            let donutExtras = document.createElement("li");
+            donutExtras.innerHTML = ("<b>Extras:</b> "+ donut[3]);
+            donutInfo.appendChild(donutExtras);
+
+            let donutRating = document.createElement("li");
+            donutRating.innerHTML = ("<b>Rating:</b> "+ rankOrder[donut[4]]);
+            donutInfo.appendChild(donutRating);
+
+            let donutNotes = document.createElement("li");
+            donutNotes.innerHTML = ("<b>Notes:</b> "+ donut[6]);
+            donutInfo.appendChild(donutNotes);
+
+            donutPopup.appendChild(donutInfo);
+            
+            let closeButton = document.createElement("button");
+            closeButton.setAttribute("id", "closedonut");
+            closeButton.innerText = "Onwards!"
+            closeButton.addEventListener("click", function(e) {
+                donutPopup.close();
+            });
+            donutPopup.appendChild(closeButton);
+
+            donutPopup.showModal();
+        });
     }
 }
 
@@ -68,6 +141,7 @@ function readDonuts() {
         success: function(response)  {
             donuts = $.csv.toArrays(response);
             drawTiers(donuts);
+            donutDialog(donuts);
         }   
       });
 }
@@ -85,5 +159,5 @@ function butWhy() {
     });
 }
 
-butWhy();
 readDonuts();
+butWhy();
