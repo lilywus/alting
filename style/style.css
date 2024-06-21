@@ -150,4 +150,9 @@ h3, h4, h5 {
         width: 85%;
         margin: 5% auto;
     }
+
+    .tab {
+        padding: 5px;
+        font-size: .9em;
+    }
 }
