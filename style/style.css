@@ -9,17 +9,20 @@ body {
 	font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif; 
 	margin-bottom: 5%;
 	padding: 0;
+    background: #fffefb;
 	color: #000;
 }
 
 ::-webkit-scrollbar {
-    width:5px;
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb { 
+    background: var(--main-color);
 }
 
-::-webkit-scrollbar-thumb:vertical {
-    width:1px;
-    background-color: #000;
-    border-right: 4px solid #fff;
+::-webkit-scrollbar-track {
+    background: none;
 }
 
 hr {
@@ -52,7 +55,7 @@ h1, h2 {
 }
 
 h3, h4, h5 {
-    font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif; 
     font-weight: normal;
 }
 
@@ -136,6 +139,10 @@ h3, h4, h5 {
     -ms-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+}
+
+.credit {
+    margin-top: 15px;
 }
 
 @media only screen and (max-width: 500px) {

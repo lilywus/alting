@@ -17,6 +17,10 @@ body {
     line-height: 1em;
 }
 
+#footer {
+    text-align: center;
+}
+
 button {
     display: block;
     border: 1px solid #000;

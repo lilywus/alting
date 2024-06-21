@@ -26,9 +26,24 @@ function getLessons() {
             }   
 
             let table = new Tabulator("#lessontable", {
-                data: lessonsRead, // assign data to table
-                layout: "fitDataStretch", // fit columns to width of table (optional)
-                columns: [ //Define Table Columns
+                data: lessonsRead,
+                layout: "fitDataStretch", 
+                rowFormatter: function(row) {
+                    let data = row.getData();
+                    if (data.year == 1) {
+                        row.getElement().style.setProperty("--row-hover", "#FFCDD2");
+                        row.getElement().style.setProperty("--row-active", "#EF9A9A");
+                    }
+                    if (data.year == 2) {
+                        row.getElement().style.setProperty("--row-hover", "#B2DFDB");
+                        row.getElement().style.setProperty("--row-active", "#80CBC4");
+                    }
+                    if (data.year == 3) {
+                        row.getElement().style.setProperty("--row-hover", "#FFE0B2");
+                        row.getElement().style.setProperty("--row-active", "#FFCC80");
+                    }
+                },
+                columns: [ 
                     {title: "Grammar", field: "grammar"},
                     {title: "Year", field: "year"},
                     {title: "Unit", field: "unit"},
@@ -45,4 +60,4 @@ function getLessons() {
     });
 }
 
-console.log(getLessons());
+getLessons();

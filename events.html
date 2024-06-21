@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>School Events</title>
+    <link rel="icon" href="/alting/i/icon.png" type="image/png">
+
+    <!--Tabulator scripts-->
+    <link href="https://unpkg.com/tabulator-tables@6.2.1/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.2.1/dist/js/tabulator.min.js"></script>
+
+    <!--Jquery for parsing csv-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.js"></script>
+
+    <!--My files-->
+    <script src="js/lessontable.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style/style_lessons.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9Z323GNCJ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G9Z323GNCJ');
+    </script>
+
+</head>
+
+<body>
+
+<div id="pagebox">
+    <div id="tabs">
+        <a href="index.html"><div class="tab">Main</div></a>
+        <a href="lessons.html"><div class="tab">Lessons</div></a>
+        <a href="jplife.html"><div class="tab">Japan Life</div></a>
+    </div>
+
+    <div id="content">
+        <h1>So, what's going on?</h1>
+        
+        <p>
+            A very brief description of some of the events that happen around school.
+            Listed in the school calendar and will be written on the whiteboard schedules for each day.
+        </p>
+
+        <div id="eventtable"></div>
+        
+    </div>
+</div>
+
+</body>
+</html>

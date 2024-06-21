@@ -15,9 +15,11 @@ ul {
 }
 
 .tabulator-row.tabulator-selectable:hover {
-    background-color: rgb(211, 200, 234);
+    background: rgb(211, 200, 234);
+    background: var(--row-hover);
 }
 
 .tabulator-row.tabulator-selectable:active {
-    background-color: rgb(189, 168, 231);
+    background: rgb(189, 168, 231);
+    background: var(--row-active);
 }

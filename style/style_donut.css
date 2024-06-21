@@ -1,5 +1,5 @@
 body {
-    margin-top: 3vh;
+    margin: 3vh 0;
 }
 
 #header, #footer {
@@ -7,7 +7,7 @@ body {
 }
 
 #donuttable {
-    margin: 10px auto;
+    margin: 10px auto 20px auto;
     width: 70vw;
     display: flex;
     flex-direction: column;
@@ -148,5 +148,9 @@ dialog ul {
     .donut {
         width: 60px;
         height: 60px;
+    }
+
+    #donutdialog {
+        padding: 20px;
     }
 }
