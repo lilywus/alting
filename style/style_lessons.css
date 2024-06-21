@@ -1,3 +1,8 @@
+:root {
+    --row-hover: rgb(211, 200, 234);
+    --row-active: rgb(189, 168, 231);
+}
+
 p:last-of-type {
     margin-bottom: 0;
 }
@@ -15,11 +20,9 @@ ul {
 }
 
 .tabulator-row.tabulator-selectable:hover {
-    background: rgb(211, 200, 234);
     background: var(--row-hover);
 }
 
 .tabulator-row.tabulator-selectable:active {
-    background: rgb(189, 168, 231);
     background: var(--row-active);
 }
