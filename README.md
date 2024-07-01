@@ -5,12 +5,8 @@ A record of my time in Sapporo as an Assistant Language Teacher (ALT) on the JET
 
 View webpage: [https://lilywus.github.io/alting/](https://lilywus.github.io/alting/)
 
-### Future features
-
-- 
-
 ### Challenges
 
-Although I have been slowly working through The Odin Project (you can view some of my work from that on my [Github profile](https://github.com/lilywus)!, I'm still trying to gain more confidence in using JavaScript on the web. My current projects reflect my current skills, so everything is an ongoing work in progress!
+Although I have been slowly working through The Odin Project (you can view some of my work from that on my [Github profile](https://github.com/lilywus) and [portfolio](https://lilywus.github.io/)!, I'm still trying to gain more confidence in using JavaScript on the web. My current projects reflect my current skills, so everything is an ongoing work in progress!
 
 Sometimes it's difficult going from concept to implementation, no matter how easy the task seems (it took me several hours to get a csv file read into Javascript?). I hope to grasp this process better through projects such as this!
